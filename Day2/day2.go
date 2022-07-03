@@ -80,7 +80,7 @@ func main() {
 	mapAddress["Line3"] = Address{Line1: "Borivali"}
 	mapAddress["Line4"] = Address{Line1: "Nashik"}
 
-	fmt.Println("Map Address: ", mapAddress)
+	// fmt.Println("Map Address: ", mapAddress)
 
 	// _, ok := mapAddress["Line5"]
 	// if ok {
@@ -89,8 +89,28 @@ func main() {
 	// 	fmt.Println("Invalid Address Line")
 	// }
 
-	delete(mapAddress, "Line4")
-	fmt.Println("Map Address: ", mapAddress)
+	// delete(mapAddress, "Line4")
+	// fmt.Println("Map Address: ", mapAddress)
+
+	//------CHECK DUPLICATES------
+	arr1 := []string{"ABC", "PQR", "ABC", "ABC", "MNO", "PQR", "PQR"}
+	mapData1 := make(map[string]int)
+	for _, v := range arr1 {
+		value, ok := mapData1[v]
+		if ok {
+			mapData1[v] = value + 1
+
+		} else {
+			mapData1[v] = 1
+
+		}
+	}
+
+	for i, v := range mapData1 {
+		if v > 1 {
+			fmt.Printf("%s repeated %d times \n", i, v)
+		}
+	}
 
 }
 
