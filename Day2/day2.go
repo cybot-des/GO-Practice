@@ -93,25 +93,32 @@ func main() {
 	// fmt.Println("Map Address: ", mapAddress)
 
 	//------CHECK DUPLICATES------
-	arr1 := []string{"ABC", "PQR", "ABC", "ABC", "MNO", "PQR", "PQR"}
-	mapData1 := make(map[string]int)
-	for _, v := range arr1 {
-		value, ok := mapData1[v]
-		if ok {
-			mapData1[v] = value + 1
+	// arr1 := []string{"ABC", "PQR", "ABC", "ABC", "MNO", "PQR", "PQR"}
+	// mapData1 := make(map[string]int)
+	// for _, v := range arr1 {
+	// 	value, ok := mapData1[v]
+	// 	if ok {
+	// 		mapData1[v] = value + 1
 
-		} else {
-			mapData1[v] = 1
+	// 	} else {
+	// 		mapData1[v] = 1
 
-		}
-	}
+	// 	}
+	// }
 
-	for i, v := range mapData1 {
-		if v > 1 {
-			fmt.Printf("%s repeated %d times \n", i, v)
-		}
-	}
+	// for i, v := range mapData1 {
+	// 	if v > 1 {
+	// 		fmt.Printf("%s repeated %d times \n", i, v)
+	// 	}
+	// }
 
+	// Test()
+	// Test1(2)
+	// fmt.Println(Test3(1, 2))
+	// fmt.Println(Swap(10, 20))
+	// fmt.Println(Calculate(10, 20))
+
+	fmt.Println(CalculateVariadic("Pooja", true, 10, 20, 30, 40, 50))
 }
 
 type student struct {
@@ -126,4 +133,44 @@ type Address struct {
 	City    string
 	State   string
 	Pincode int
+}
+
+//------FUNCTIONS-------
+
+//no arguments no return value
+func Test() {
+	fmt.Println("Test Function")
+}
+
+//with argument no return
+func Test1(arg1 int) {
+	fmt.Println("Returns ", arg1)
+}
+
+//with argument with return
+func Test3(arg1 int, arg2 int) int {
+	return arg1 + arg2
+}
+
+// Multi Return
+func Swap(arg1, arg2 int) (int, int) {
+	return arg2, arg1
+}
+
+//Multi Return Type 2
+func Calculate(x, y int) (out1, out2 int) {
+	out1 = x + 10
+	out2 = y + 20
+	return
+}
+
+//Variadc Function Return
+func CalculateVariadic(name string, status bool, nums ...int) (out int) {
+	fmt.Println(" ", nums)
+	for i := 0; i < len(nums); i++ {
+		fmt.Println("Inputs: ", nums[i])
+		out += nums[i]
+	}
+	fmt.Println("Outputs: ")
+	return
 }
