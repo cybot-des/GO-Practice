@@ -14,7 +14,7 @@ func main() {
 	go printMessage()
 	fmt.Println("Hello, world!")
 	Hello()
-	// time.Sleep(2 * time.Second)
+	time.Sleep(2 * time.Second)
 }
 
 func Hello() {
